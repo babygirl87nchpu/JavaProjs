@@ -1,0 +1,55 @@
+package edu.vt.cs5044;
+
+public class MinivanSlidingDoorTester {
+
+    public static void main(String[] args) {
+        
+        //Test 1
+        MinivanSlidingDoor minivanDoor = new MinivanSlidingDoor();
+
+        System.out.println("Testing newly constructed minivan door object");
+
+        System.out.println("Open? Expected false, Actual: " + minivanDoor.isOpen());
+        System.out.println("Locked? Expected false, Actual: " + minivanDoor.isLocked());
+        System.out.println("ChildSafe? Expected false, Actual: " + minivanDoor.isChildSafe());
+        System.out.println("Gear? Expected Park, Actual: " + minivanDoor.getGear());
+        System.out.println("");
+
+        //Test 2
+        //pushlock for results
+        Result res = minivanDoor.pushLockButton();
+        System.out.println("Testing locking funcuality");
+        System.out.println("Locked? Expected true, Actual: " + minivanDoor.isLocked());
+        System.out.println("Push Lock? Expected Unlocked, Actual: " + res);
+        System.out.println("");
+
+        //Test 3
+        //Pushlock for no results
+        res = minivanDoor.pushLockButton();
+        System.out.println("Testing locking funcuality for no result");
+        System.out.println("Push Lock? Expected No Action, Actual: " + res);
+        
+        //Test 4
+        //pushlock for results
+        Result res = minivanDoor.pushUnlockButton();
+        System.out.println("Testing locking funcuality");
+        System.out.println("Locked? Expected true, Actual: " + minivanDoor.isLocked());
+        System.out.println("Push Lock? Expected Unlocked, Actual: " + res);
+        System.out.println("");
+        
+        //Test 5
+        //Pushlock for no results
+        res = minivanDoor.pushUnlockButton();
+        System.out.println("Testing locking funcuality for no result");
+        System.out.println("Push Lock? Expected No Action, Actual: " + res);
+        
+        //Test 5
+        //setChildSafe for no results
+        //minivanDoor.setChildSafe();
+        //System.out.println("Locked? Expected true, Actual: " + minivanDoor.setChildSafe());
+        //System.out.println("Testing setChildSafe funcuality for no result");
+        //System.out.println("Push setChildSafe? Expected No Action, Actual: " + res);
+
+    }
+
+}

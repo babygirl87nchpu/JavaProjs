@@ -1,0 +1,161 @@
+package edu.vt.cs5044;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * 
+ * This class has private instances, helpers, and public methods for DotsAndBoxes project
+ * implementation
+ *
+ * @author SamIAm
+ * @version Mar 16, 2023
+ *
+ */
+public class DABGame implements DotsAndBoxes {
+
+    private Player currentPlayer;
+    private int size;
+    private Map<Coordinate, Box> boxGrid;
+    private boolean gridInitialized;
+
+    /**
+     * Construct a new DABGame object.
+     *
+     */
+    public DABGame() {
+        currentPlayer = null;
+        size = -1;
+        boxGrid = null;
+        gridInitialized = false;
+
+    }
+
+    @Override
+    public boolean drawEdge(Coordinate coord, Direction dir) {
+
+        validateGridInitialized();
+
+        if (dir == null) {
+            throw new GameException();
+        }
+        Box box = fetchBox(coord);
+        boolean boxCompleted = false;
+        boolean neighborCompleted = false;
+
+        if (box.isDrawnEdgeAt(dir)) {
+            return false;
+        }
+        box.drawEdge(dir, currentPlayer);
+        if (box.getOwner() != null) {
+            boxCompleted = true;
+        }
+        try {
+            Box neighbor = fetchBox(coord.getNeighbor(dir));
+            neighbor.drawEdge(dir.getOpposite(), currentPlayer);
+            if (neighbor.getOwner() != null) {
+                neighborCompleted = true;
+            }
+        }
+        catch (GameException ge) {
+            // do nothing; we just needed to skip this section if there's no neighbor
+        }
+        if (!boxCompleted && !neighborCompleted) {
+            currentPlayer = currentPlayer.getOpponent();
+        }
+        return true;
+    }
+
+    @Override
+    public Player getCurrentPlayer() {
+        validateGridInitialized();
+
+        Map<Player, Integer> scoreSheetMap = getScores();
+        int sum = 0;
+        for (int score : scoreSheetMap.values()) {
+            sum += score;
+        }
+        return currentPlayer;
+    }
+
+    @Override
+    public Collection<Direction> getDrawnEdgesAt(Coordinate coord) {
+        validateGridInitialized();
+        return fetchBox(coord).getDrawnEgdes();
+    }
+
+    @Override
+    public Player getOwnerAt(Coordinate coord) {
+        validateGridInitialized();
+        Box box = fetchBox(coord);
+        return box.getOwner();
+    }
+
+    /**
+     * Gets the box at the coordinate that is passed in
+     *
+     * @param coord coordinate for that box
+     * @return box
+     */
+    private Box fetchBox(Coordinate coord) {
+        validateGridInitialized();
+        if (!boxGrid.containsKey(coord)) {
+            throw new GameException("Invalid coordinate");
+        }
+        return boxGrid.get(coord);
+    }
+
+    /**
+     * Checking to see if grid is initialized
+     */
+    private void validateGridInitialized() {
+        if (!gridInitialized) {
+            throw new GameException("Grid is not initilized");
+        }
+    }
+
+    @Override
+    public Map<Player, Integer> getScores() {
+        validateGridInitialized();
+        int scoreP1 = 0;
+        int scoreP2 = 0;
+        for (Box box : boxGrid.values()) {
+            if (box.getOwner() == Player.ONE) {
+                scoreP1++;
+            } else if (box.getOwner() == Player.TWO) {
+                scoreP2++;
+            }
+        }
+        Map<Player, Integer> scoreMap = new HashMap<>();
+        scoreMap.put(Player.ONE, scoreP1);
+        scoreMap.put(Player.TWO, scoreP2);
+        return scoreMap;
+    }
+
+    @Override
+    public int getSize() {
+        validateGridInitialized();
+        return size;
+    }
+
+    @Override
+    public void init(int size) {
+        if (size < 2) {
+            throw new GameException("Size is less than 2");
+        }
+
+        this.size = size;
+        currentPlayer = Player.ONE;
+
+        boxGrid = new HashMap<>();
+
+        for (int x = 0; x < size; x++) {
+            for (int y = 0; y < size; y++) {
+                boxGrid.put(new Coordinate(x, y), new Box());
+            }
+        }
+        gridInitialized = true;
+    }
+
+}

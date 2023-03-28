@@ -1,0 +1,18 @@
+P1 Tester (Spring 2023)
+
+Sample Test Case - Part 1
+sbm(9,8,12,4500)t(5)l(3)t(9)l(1)l(1)t(18)
+Loc     expected: 18;    actual: 18
+#Pass   expected: 5;     actual: 5
+%Charge expected: 88.2;  actual: 88.2
+U/T     expected: 176.0; actual: 176.0
+#Trips  expected: 22;    actual: 22
+
+Sample Test Case - Part 2 
+sbm(9,8,12,4500)t(5)l(3)t(9)l(1)l(1)t(18)l(-4)t(-3,5,9)r()t(-3)l(-1)
+Loc     expected: -3;    actual: -3
+#Pass   expected: 0;     actual: 0
+%Charge expected: 99.4;  actual: 99.4
+U/T     expected: 128.5; actual: 128.5
+#Trips  expected: 34;    actual: 34
+

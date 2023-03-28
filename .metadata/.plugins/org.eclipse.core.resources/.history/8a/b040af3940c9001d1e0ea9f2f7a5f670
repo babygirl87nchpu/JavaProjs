@@ -1,0 +1,73 @@
+package edu.vt.cs5044;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Write a one-sentence summary of your class here. Follow it with additional details about its
+ * purpose and how to use it.
+ *
+ * @author SamIAm
+ * @version Mar 22, 2023
+ *
+ */
+public class Box {
+
+    private Player owner;
+    private Set<Direction> drawnEdges;
+
+    /**
+     * Construct a new Box object.
+     *
+     */
+    public Box() {
+        owner = null;
+        drawnEdges = new HashSet<>();
+    }
+
+    /**
+     * Place a description of your method here.
+     *
+     * @return
+     */
+    public Player getOwner() {
+        return owner;
+    }
+
+    /**
+     * Place a description of your method here.
+     *
+     * @return
+     */
+    public Set<Direction> getDrawnEgdes() { // piazza, it has an issue
+        return drawnEdges;
+
+    }
+
+    /**
+     * Place a description of your method here.
+     *
+     * @return
+     */
+    public boolean isDrawnEdgeAt(Direction dir) {
+        return false;
+    }
+
+    public void drawEdge(Direction dir, Player currentPlayer) {
+
+        drawnEdges.add(dir);
+        if(isBoxCompleted())
+        {
+            owner = currentPlayer;
+        }
+
+    }
+    
+    private boolean isBoxCompleted()
+    {
+        if (drawnEdges.size()==4)
+        return true;
+        return false;
+    }
+
+}

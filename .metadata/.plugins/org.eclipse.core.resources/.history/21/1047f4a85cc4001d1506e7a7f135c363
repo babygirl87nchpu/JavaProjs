@@ -1,0 +1,97 @@
+package edu.vt.cs5044;
+
+import java.util.Collection;
+import java.util.Map;
+
+/**
+ * 
+ * Write a one-sentence summary of your class here. Follow it with additional details about its
+ * purpose and how to use it.
+ *
+ * @author SamIAm
+ * @version Mar 16, 2023
+ *
+ */
+public class DABGame implements DotsAndBoxes {
+
+    private Player currentPlayer; 
+    private int size;
+
+    /**
+     * Construct a new DABGame object.
+     *
+     */
+    public DABGame() {
+        currentPlayer = null;
+        size = -1;
+
+    }
+
+    @Override
+    public boolean drawEdge(Coordinate arg0, Direction arg1) {
+
+        return false;
+    }
+
+    /**
+     * 
+     * {@inheritDoc}
+     */
+    @Override
+    public Player getCurrentPlayer() {
+
+        return currentPlayer;
+    }
+
+    /*
+     * 
+     */
+    @Override
+    public Collection<Direction> getDrawnEdgesAt(Coordinate arg0) {
+
+        return null;
+    }
+
+    /*
+     * 
+     */
+    @Override
+    public Player getOwnerAt(Coordinate arg0) {
+
+        return null;
+    }
+
+    /*
+     * 
+     */
+    @Override
+    public Map<Player, Integer> getScores() {
+
+        return null;
+    }
+
+    /*
+     * 
+     */
+    @Override
+    public int getSize() {
+
+        return size;
+    }
+
+    /*
+     * 
+     */
+    @Override
+    public void init(int arg0) {
+
+        if (size < 2) {
+            throw new GameException("Size is less that 2");
+        }
+
+        this.size = size;
+        currentPlayer = Player.ONE;
+
+    }
+
+}

@@ -1,0 +1,10 @@
+package edu.vt.cs5044;
+
+public class Hello5044 {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+    }
+
+}

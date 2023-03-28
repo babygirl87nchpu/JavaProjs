@@ -1,0 +1,103 @@
+package edu.vt.cs5044;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Write a one-sentence summary of your class here. Follow it with additional details about its
+ * purpose and how to use it.
+ *
+ * @author SamIAm
+ * @version Mar 22, 2023
+ *
+ */
+public class Box {
+
+    private Player owner;
+    private Set<Direction> drawnEdges;
+
+    /**
+     * Construct a new Box object.
+     *
+     */
+    public Box() {
+        owner = null;
+        drawnEdges = new HashSet<>();
+    }
+
+    /**
+     * Gets the owner
+     *
+     * @return owner gets current owner
+     */
+    public Player getOwner() {
+        return owner;
+    }
+
+    /**
+     * Gets the drawn edges of the box
+     *
+     * @return Direction of drawn edges
+     */
+    public Set<Direction> getDrawnEgdes() { // piazza, it has an issue
+        return new HashSet<>(drawnEdges);
+
+    }
+
+    /**
+     * Get where the edge is drawn at
+     *
+     * @return true/false on where the edge is drawn
+     */
+    public boolean isDrawnEdgeAt(Direction dir) {
+        return false;
+    }
+
+    /**
+     * Place a description of your method here.
+     *
+     * @param dir Direction that the edge is drawn
+     * @param current Player Player - current or opposite player
+     */
+    public void drawEdge(Direction dir, Player currentPlayer) {
+
+        drawnEdges.add(dir);
+        if (isBoxCompleted()) {
+            owner = currentPlayer;
+        }
+    }
+
+    /**
+     * Returns a complete box
+     *
+     * @return true that the box is complete
+     */
+    public boolean isBoxCompleted() {
+        return drawnEdges.size() == 4;
+    }
+
+    /**
+     * 
+     * Place a description of your method here.
+     *
+     * @param dir Direction added edge
+     * @param currentPlayer Player gets the current player
+     */
+    public void addEdge(Direction dir, Player currentPlayer) {
+        drawnEdges.add(dir);
+        if (isBoxCompleted()) {
+            owner = currentPlayer;
+        }
+    }
+
+    /**
+     * This boolean method will test if the box has already an edge already drawn.
+     * 
+     * @param dir this is the direction that's passed
+     * @return true if the Box at the specific direction has edge already drawn else false
+     */
+    public Boolean hasEdge(Direction dir) {
+        return drawnEdges.contains(dir);
+    }
+
+}

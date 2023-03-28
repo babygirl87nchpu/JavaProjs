@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;CS5044-P1/src/edu.vt.cs5044&apos;&#x0D;&#x0A;- Original project: &apos;CS5044-P1&apos;&#x0D;&#x0A;- Destination element: &apos;CS5044-P1/src/edu.vt.cs5044&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     expected_output.txt&#x0D;&#x0A;     ShuttleBatteryMonitorTester.java&#x0D;&#x0A;     ShuttleBatteryMonitor.java&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="/src&lt;edu.vt.cs5044" element1="expected_output.txt" element2="ShuttleBatteryMonitorTester.java" element3="ShuttleBatteryMonitor.java" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1675596875813" units="0" version="1.0"/>
+</session>

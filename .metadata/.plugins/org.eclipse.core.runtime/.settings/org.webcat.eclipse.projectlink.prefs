@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+org.webcat.eclipse.projectlink.preferences.data_notification_shown=true
+org.webcat.eclipse.projectlink.preferences.push_to_server=true
+org.webcat.eclipse.projectlink.preferences.submitURL=https\://web-cat.cs.vt.edu/Web-CAT/WebObjects/Web-CAT.woa/wa/assignments/eclipse?institution\=VT
+org.webcat.eclipse.projectlink.preferences.urlType=separate
+org.webcat.eclipse.projectlink.preferences.user_uuid=6449c870-84d3-40d5-a1fd-0a38135f646b
+org.webcat.eclipse.projectlink.preferences.username=samanthaim

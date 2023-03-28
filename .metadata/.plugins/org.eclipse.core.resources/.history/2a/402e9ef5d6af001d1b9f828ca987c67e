@@ -1,0 +1,168 @@
+package edu.vt.cs5044;
+
+// Template for Spring 2023
+
+public class MinivanSlidingDoor {
+
+    // TODO: Add your private fields here
+    private boolean doorOpen;
+    private boolean doorLocked;
+    private boolean childSafteyEngaged;
+    private Gear gear;
+
+    /**
+     * = Construct a new MinivanSlidingDoor object.
+     *
+     */
+    public MinivanSlidingDoor() {
+        doorOpen = false;
+        doorLocked = false;
+        childSafteyEngaged = false;
+        gear = Gear.PARK;
+    }
+
+    /**
+     * SIB GTG Return if the door is open or not
+     *
+     * @True or false
+     */
+    public boolean isOpen() {
+        return doorOpen;
+    }
+
+    /**
+     * SIS GTG Place a description of your method here.
+     *
+     * @return
+     */
+    public boolean isLocked() {
+        return doorLocked;
+    }
+
+    /**
+     * SIB GTG Place a description of your method here.
+     *
+     * @return
+     */
+    public boolean isChildSafe() {
+        return childSafteyEngaged;
+    }
+
+    /**
+     * SIB GTG Place a description of your method here.
+     *
+     * @return
+     */
+    public Gear getGear() {
+        return gear;
+    }
+
+    /**
+     * 
+     * Place a description of your method here.
+     *
+     * @param requestedGear
+     * @return
+     */
+    public Result setGear(Gear requestedGear) {
+        // TODO: Your implementation goes here
+        return null; // TODO: Replace this placeholder
+    }
+
+    /**
+     * 
+     * Place a description of your method here.
+     *
+     * @param requestedEngage
+     * @return
+     */
+    public Result setChildSafe(boolean requestedEngage) {
+        if (!childSafteyEngaged) {
+            /// we need to put the car in park and lock doors
+            // if (!pushLockButton() = Result.)
+            // {
+            // return Result.DOOR_LOCKED;
+            // }
+
+            // childSafteyEngaged = true;
+        }
+
+        return null;
+    }
+
+    /**
+     * 
+     * SIB GTG
+     *
+     * @Door Locked
+     */
+    public Result pushLockButton() {
+        if (!doorLocked) {
+            doorLocked = true;
+            return Result.DOOR_LOCKED;
+        }
+        return Result.NO_ACTION;
+    }
+
+    /**
+     * SIB GTG Place a description of your method here.
+     *
+     * @return
+     */
+    public Result pushUnlockButton() {
+        if (!doorLocked) {
+            doorLocked = false;
+            return Result.DOOR_UNLOCKED;
+        }
+        return Result.NO_ACTION;
+    }
+
+    /**
+     * 
+     * Place a description of your method here.
+     *
+     * @param direction
+     * @result
+     */
+    public Result pushDashboardButton(Direction direction) {
+        
+        if (gear != Gear.PARK) {
+            return Result.OPEN_REFUSED_LOCK;
+        } 
+        else if (direction == Direction.CLOSE) {
+            return Result.NO_ACTION;
+        }
+
+        else if (direction == null) {
+            return Result.INVALID_PARAMETER;
+        }
+        else if (direction == Direction.OPEN)
+        {
+            return Result.DOOR_OPENED;
+        }
+    }
+
+    /**
+     * 
+     * Place a description of your method here.
+     *
+     * @param direction
+     * @return
+     */
+    public Result pushInsideHandle(Direction direction) {
+        // TODO: Your implementation goes here
+        return null; // TODO: Replace this placeholder
+    }
+
+    /**
+     * 
+     * Place a description of your method here.
+     *
+     * @param direction
+     * @return
+     */
+    public Result pushOutsideHandle(Direction direction) {
+        // TODO: Your implementation goes here
+        return null; // TODO: Replace this placeholder
+    }
+}

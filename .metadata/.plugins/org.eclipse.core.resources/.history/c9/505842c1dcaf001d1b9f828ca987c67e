@@ -1,0 +1,73 @@
+package edu.vt.cs5044;
+
+public class MinivanSlidingDoorTester {
+
+    public static void main(String[] args) {
+        
+        //Test 1
+        MinivanSlidingDoor minivanDoor = new MinivanSlidingDoor();
+
+        System.out.println("Testing newly constructed minivan door object");
+
+        System.out.println("Open? Expected false, Actual: " + minivanDoor.isOpen());
+        System.out.println("Locked? Expected false, Actual: " + minivanDoor.isLocked());
+        System.out.println("ChildSafe? Expected false, Actual: " + minivanDoor.isChildSafe());
+        System.out.println("Gear? Expected Park, Actual: " + minivanDoor.getGear());
+        System.out.println("");
+
+        //Test 2
+        //pushlock for results
+        System.out.println("Test 2");
+        Result res = minivanDoor.pushLockButton();
+        System.out.println("Testing locking funcuality");
+        System.out.println("Locked? Expected true, Actual: " + minivanDoor.isLocked());
+        System.out.println("Push Lock? Expected Unlocked, Actual: " + res);
+        System.out.println("");
+
+        //Test 3
+        //Pushlock for no results
+        System.out.println("Test 3");
+        res = minivanDoor.pushLockButton();
+        System.out.println("Testing locking funcuality for no result");
+        System.out.println("Push Lock? Expected No Action, Actual: " + res);
+        System.out.println("");
+        
+        //Test 4
+        //pushlock for results
+        System.out.println("Test 4");
+        Result resUnlock = minivanDoor.pushUnlockButton();
+        System.out.println("Testing Unlocking funcuality");
+        System.out.println("Locked? Expected true, Actual: " + minivanDoor.isLocked());
+        System.out.println("Push UnLock? Expected Unlocked, Actual: " + resUnlock);
+        System.out.println("");
+        
+        //Test 5
+        //Pushlock for no results
+        System.out.println("Test 5");
+        resUnlock = minivanDoor.pushUnlockButton();
+        System.out.println("Testing Unlocking funcuality for no result");
+        System.out.println("Push UnLock? Door Open Action, Actual: " + resUnlock);
+        System.out.println("");
+        
+        //Test 6
+        //pushDashboardButton for open
+        System.out.println("Test 6");
+        resUnlock = minivanDoor.pushDashboardButton(Direction.OPEN);
+        System.out.println("Testing pushDashboardButton funcuality for open door");
+        System.out.println("Push pushDashboardButton? Expected No Action, Actual: " + resUnlock);
+        System.out.println("");
+        
+        //Test 7
+        //pushDashboardButton for close
+        System.out.println("Test 7");
+        resUnlock = minivanDoor.pushDashboardButton(Direction.CLOSE);
+        System.out.println("Testing pushDashboardButton funcuality for closed door");
+        System.out.println("Push pushDashboardButton? Expected No Action, Actual: " + resUnlock);
+        System.out.println("");
+        
+        
+        //Test 5
+
+    }
+
+}

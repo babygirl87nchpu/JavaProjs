@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<checkstyle-configurations file-format-version="5.0.0" default-check-configuration="Web-CAT CS 5044">
+  <check-configuration name="Web-CAT CS 5044" location="C:\Users\SamIAm\Downloads\webcat-checkstyle-ruleset_1.8.7.xml" type="external" description="">
+    <additional-data name="protect-config-file" value="false"/>
+  </check-configuration>
+</checkstyle-configurations>

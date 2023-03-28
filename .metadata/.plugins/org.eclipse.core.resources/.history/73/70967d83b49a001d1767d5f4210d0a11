@@ -1,0 +1,23 @@
+package edu.vt.cs5044;
+
+/**
+ * This is a Project 0 for class CS 5044 The point of this application is to print out CS 5044
+ * 
+ * @author Samantha_Martin
+ * @version 2023-01-19
+ */
+public class Hello5044 {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+        System.out.println(" CCCC    SSSS     555555   0000   44  44  44  44");
+        System.out.println("CC  CC  SS  SS    55      00  00  44  44  44  44");
+        System.out.println("CC       SS       55555   00  00  44  44  44  44");
+        System.out.println("CC         SS         55  00  00  444444  444444");
+        System.out.println("CC  CC  SS  SS    55  55  00  00      44      44");
+        System.out.println(" CCCC    SSSS      5555    0000       44      44");
+
+    }
+
+}

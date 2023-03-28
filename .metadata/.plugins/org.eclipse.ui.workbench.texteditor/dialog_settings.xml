@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="TOP"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="NORTH"/>
+			<item value="SOUTH"/>
+			<item value="EAST"/>
+			<item value="WEST"/>
+			<item value="dab"/>
+			<item value="isDrawnEdgeAt"/>
+			<item value="getDrat"/>
+			<item value="box == null"/>
+			<item value="package test;"/>
+			<item value="package edu.vt.cs5044;"/>
+			<item value="tetrisBoardO"/>
+			<item value="tetrisBoardT"/>
+			<item value="tetrisBoardZ"/>
+			<item value="tetrisBoardS"/>
+			<item value="tetrisBoardL"/>
+		</list>
+		<list key="replacehistory">
+			<item value="TOP"/>
+			<item value="BOTTOM"/>
+			<item value="RIGHT"/>
+			<item value="LEFT"/>
+			<item value="game"/>
+			<item value="testBoardO"/>
+			<item value="testBoardT"/>
+			<item value="testBoardZ"/>
+			<item value="testBoardS"/>
+			<item value="testBoardL"/>
+			<item value="testBoardJ"/>
+			<item value="testBoardI"/>
+			<item value="tetrisBoard12"/>
+			<item value="tetrisBoard11"/>
+			<item value="tetrisBoard10"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="223"/>
+		<item key="DIALOG_Y_ORIGIN" value="310"/>
+		<item key="DIALOG_WIDTH" value="412"/>
+		<item key="DIALOG_HEIGHT" value="436"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-30|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>
